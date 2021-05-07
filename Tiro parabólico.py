@@ -12,6 +12,7 @@ Exercises
 #Autor: Erick Potts Berruga
 #Autor: José Gabriel Arana Jacuinde 
 
+"""Librerias importadas para el codigo"""
 from random import randrange
 from turtle import *
 from freegames import vector
@@ -48,6 +49,7 @@ def draw():
 
 def move():
     "Move ball and targets."
+    
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
@@ -69,17 +71,18 @@ def move():
 
     draw()
 
+    #Condicion para que las pelotas vuelvan a aperecer en el principio
     for target in targets:
         if not inside(target):
             target.x=-target.x
             goto(target.x,target.y)
 
-    ontimer(move, 50)
+    ontimer(move, 50) #Velocidad
 
-setup(420, 420, 370, 0)
-hideturtle()
-up()
-tracer(False)
-onscreenclick(tap)
-move()
-done()
+setup(420, 420, 370, 50)#Posicion en la cual la ventana aperece y su tamaño
+hideturtle()#Para ocultar el cursor
+up()#No hay dibujos en el juego
+tracer(False)#El cursor no es una tortuga
+onscreenclick(tap)#Hace que el juego funcione con un click
+move()#Empieza el juego
+done()#Termina el juego
