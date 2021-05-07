@@ -8,6 +8,9 @@ Exercises
 4. Change the speed of the ball.
 
 """
+#Codigo modificado por:
+#Autor: Erick Potts Berruga
+#Autor:
 
 from random import randrange
 from turtle import *
@@ -68,7 +71,8 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            target.x=-target.x
+            goto(target.x,target.y)
 
     ontimer(move, 50)
 
