@@ -10,7 +10,7 @@ Exercises
 """
 #Codigo modificado por:
 #Autor: Erick Potts Berruga
-#Autor:
+#Autor: José Gabriel Arana Jacuinde 
 
 from random import randrange
 from turtle import *
