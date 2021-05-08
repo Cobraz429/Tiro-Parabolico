@@ -26,8 +26,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 600) / 25
-        speed.y = (y + 600) / 25
+        speed.x = (x + 200) / 25
+        speed.y = (y + 200) / 25
 
 def inside(xy):
     "Return True if xy within screen."
@@ -56,10 +56,10 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 1
+        target.x -= 0.35
 
     if inside(ball):
-        speed.y -= 1
+        speed.y -= 0.5
         ball.move(speed)
 
     dupe = targets.copy()
@@ -77,7 +77,7 @@ def move():
             target.x=-target.x
             goto(target.x,target.y)
 
-    ontimer(move, 50) #Velocidad
+    ontimer(move, 10) #Velocidad
 
 setup(420, 420, 370, 50)#Posicion en la cual la ventana aperece y su tamaño
 hideturtle()#Para ocultar el cursor
